@@ -1,0 +1,26 @@
+Hey there! Before you start editing this shader, make sure to check out the license first ^-^
+
+This file tells you how the shader is put together~
+
+The "program" folder holds files used by all three Minecraft worlds.
+The folders world-1, world0, and world1 just include their matching program files.
+They also have a special line #define DIMENSION_whatever so you can do stuff only in certain worlds — like if you want something only in the overworld, just check if DIMENSION_OVERWORLD is there :3
+
+Most lighting happens in gbuffers inside the "/global/lighting" files.
+Composite passes take care of things like post-processing effects, sky, fog, and clouds. You can peek inside those files to see what each pass does ^-^
+
+About the buffers:
+Right now, Kute uses 3 main buffers:
+
+colortex0: main buffer
+
+colortex1: bloom effects
+
+colortex2: SMAA main
+
+colortex3: SMAA area
+
+gaux1: Reflections & TAA
+
+colortex5: SMAA search
+
